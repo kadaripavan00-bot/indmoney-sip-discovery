@@ -1,0 +1,7 @@
+﻿journey_stage,signals,documents,lapse_rate,lapse_display,known_outcomes,top_theme
+m0_setup,37,37,0.0,n/a,0,mandate_friction
+m9_late,22,22,0.75,75%,8,other_unclassified
+m3_early,10,10,0.5,50%,2,other_unclassified
+m6_mid,7,7,0.6666666666666666,67%,3,cancellation_friction
+post_lapse,3,3,0.3333333333333333,33%,3,forced_pause
+pre_start,3,3,0.0,n/a,0,other_unclassified

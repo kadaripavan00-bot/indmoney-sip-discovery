@@ -1,0 +1,98 @@
+{
+  "tests": 15,
+  "passed": 15,
+  "failed": 0,
+  "results": [
+    {
+      "test": "third_person_rejected",
+      "pass": true,
+      "detail": "behaviors=[] outcome=unknown"
+    },
+    {
+      "test": "hypothetical_rejected",
+      "pass": true,
+      "detail": "behaviors=[] outcome=unknown"
+    },
+    {
+      "test": "negation_rejected",
+      "pass": true,
+      "detail": "behaviors=[] outcome=continues"
+    },
+    {
+      "test": "payment_stop_not_voluntary",
+      "pass": true,
+      "detail": "behaviors=[] triggers=['payment_failure', 'mandate_issue'] outcome=stopped"
+    },
+    {
+      "test": "temporary_stop_to_paused",
+      "pass": true,
+      "detail": "behaviors=['paused_sip', 'restarted_sip'] outcome=returned"
+    },
+    {
+      "test": "attempted_stop_not_completed",
+      "pass": true,
+      "detail": "behaviors=[] outcome=unknown"
+    },
+    {
+      "test": "segment_family_member_rejected",
+      "pass": true,
+      "detail": "segment_cues={'age_band': 'unknown', 'goal_type': 'unknown'}"
+    },
+    {
+      "test": "valid_stop_retained",
+      "pass": true,
+      "detail": "behaviors=['stopped_sip'] outcome=stopped triggers=['job_change']"
+    },
+    {
+      "test": "quote_exact_match",
+      "pass": true,
+      "detail": "match={'start': 0, 'end': 36, 'field': 'raw', 'soft': False}"
+    },
+    {
+      "test": "quote_whitespace_soft_match",
+      "pass": true,
+      "detail": "match={'start': 0, 'end': 36, 'field': 'normalized_whitespace', 'soft': True}"
+    },
+    {
+      "test": "quote_fabrication_rejected",
+      "pass": true,
+      "detail": "match=None"
+    },
+    {
+      "test": "injection_sanitized",
+      "pass": true,
+      "detail": "I stopped my SIP last year. | [instruction-like line removed] | [instruction-like line removed] | My friend also stopped his SIP."
+    },
+    {
+      "test": "normal_text_unchanged",
+      "pass": true,
+      "detail": "I started a SIP in 2022 and continued through the 2023 correction."
+    },
+    {
+      "test": "empty_payload_dropped",
+      "pass": true,
+      "detail": "meaningful=False payload={'journey_stage': 'unknown', 'triggers': [], 'behaviors': [], 'emotions': [], 'expectations': [], 'help_seeking': [], 'outcome': 'unknown', 'segment_cues': {}, 'quote': 'I have a mutual fund account.', 'segment_quote': None, 'confidence': 'medium', 'notes': None}"
+    },
+    {
+      "test": "llm_prompt_injection_end_to_end",
+      "pass": true,
+      "detail": {
+        "relevant": false,
+        "signals": [],
+        "model": "gemini/gemini-3.5-flash-lite"
+      }
+    }
+  ],
+  "known_limitations": [
+    "Public posts are self-selected and not representative of all first-time investors.",
+    "Self-reported outcomes are not the same as the 12-month product metric.",
+    "Theme-lapse associations are correlational, not causal.",
+    "App reviews are short and often lack context; narrative sources carry more explanatory weight.",
+    "Hinglish and Indic-language coverage is limited; language detection only flags Devanagari.",
+    "Segment cues are sparse and self-reported.",
+    "Quote verification prevents fabrication, not misinterpretation.",
+    "Prompt injection is mitigated by sanitization and quote verification, but not eliminated.",
+    "Model-swap agreement is not human ground truth.",
+    "The corpus spans 2014-2026; platform and market conditions change over time."
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "gold_items": 100,
+  "compared_items": 100,
+  "second_provider": "gemini",
+  "second_model": "gemini/gemini-3.1-flash-lite",
+  "relevance": {
+    "kappa": 0.8076923076923074,
+    "ci95": [
+      0.5042492917847032,
+      1.0
+    ],
+    "gemini_relevant": 90,
+    "second_relevant": 93,
+    "both_relevant": 90
+  },
+  "outcome": {
+    "kappa": 0.9376623376623378,
+    "ci95": [
+      0.8596100278551532,
+      1.0
+    ],
+    "compared": 72,
+    "gemini_distribution": {
+      "continues": 11,
+      "stopped": 33,
+      "paused": 22,
+      "reduced": 1,
+      "returned": 4,
+      "increased": 1
+    },
+    "second_distribution": {
+      "continues": 11,
+      "stopped": 32,
+      "paused": 24,
+      "reduced": 1,
+      "returned": 3,
+      "increased": 1
+    }
+  },
+  "primary_theme": {
+    "kappa": 0.5977245022348638,
+    "ci95": [
+      0.4373977086743044,
+      0.7363834422657952
+    ],
+    "compared": 55,
+    "gemini_distribution": {
+      "positive_continuation": 11,
+      "cancellation_friction": 20,
+      "market_panic": 10,
+      "forced_pause": 2,
+      "other_unclassified": 4,
+      "cashflow_shock": 4,
+      "goal_competition": 2,
+      "habit_decay": 2
+    },
+    "second_distribution": {
+      "positive_continuation": 10,
+      "cancellation_friction": 14,
+      "market_panic": 10,
+      "forced_pause": 1,
+      "other_unclassified": 13,
+      "cashflow_shock": 4,
+      "habit_decay": 2,
+      "mandate_friction": 1
+    }
+  },
+  "behaviors": {
+    "checked_frequently": {
+      "kappa": 0.0,
+      "gemini_count": 0,
+      "second_count": 1
+    },
+    "complained": {
+      "kappa": 0.0,
+      "gemini_count": 1,
+      "second_count": 0
+    },
+    "decreased_sip": {
+      "kappa": 1.0,
+      "gemini_count": 2,
+      "second_count": 2
+    },
+    "increased_sip": {
+      "kappa": 1.0,
+      "gemini_count": 2,
+      "second_count": 2
+    },
+    "paused_sip": {
+      "kappa": 0.8019801980198021,
+      "gemini_count": 30,
+      "second_count": 26
+    },
+    "restarted_sip": {
+      "kappa": 0.5588235294117647,
+      "gemini_count": 5,
+      "second_count": 2
+    },
+    "sought_help": {
+      "kappa": 0.0,
+      "gemini_count": 2,
+      "second_count": 0
+    },
+    "started_sip": {
+      "kappa": 0.3220338983050847,
+      "gemini_count": 5,
+      "second_count": 1
+    },
+    "stopped_sip": {
+      "kappa": 0.8572108519752497,
+      "gemini_count": 31,
+      "second_count": 29
+    },
+    "switched_product": {
+      "kappa": 0.4923857868020313,
+      "gemini_count": 3,
+      "second_count": 1
+    },
+    "withdrew": {
+      "kappa": 1.0,
+      "gemini_count": 1,
+      "second_count": 1
+    }
+  },
+  "mean_behavior_jaccard": 0.7783333333333334
+}

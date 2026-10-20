@@ -1,0 +1,4 @@
+{"document_id": 722, "provider": "groq", "model": "groq/openai/gpt-oss-20b", "relevant": false, "signals": [], "quote_rejections": 0, "grounding_drops": 0, "validation_errors": 0, "at": "2026-10-20T10:48:42.647711Z"}
+{"document_id": 7642, "provider": "groq", "model": "groq/openai/gpt-oss-20b", "relevant": false, "signals": [], "quote_rejections": 0, "grounding_drops": 0, "validation_errors": 0, "at": "2026-10-20T10:48:42.647774Z"}
+{"document_id": 2248, "provider": "groq", "model": "groq/openai/gpt-oss-20b", "relevant": false, "signals": [], "quote_rejections": 0, "grounding_drops": 0, "validation_errors": 0, "at": "2026-10-20T10:48:45.053098Z"}
+{"document_id": 7818, "provider": "groq", "model": "groq/openai/gpt-oss-20b", "relevant": false, "signals": [], "quote_rejections": 0, "grounding_drops": 0, "validation_errors": 0, "at": "2026-10-20T10:48:45.053159Z"}

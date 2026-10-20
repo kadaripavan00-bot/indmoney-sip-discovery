@@ -1,0 +1,165 @@
+version: "0.2"
+
+journey_stages:
+  - pre_start
+  - m0_setup
+  - m1_first_statement
+  - m3_early
+  - m6_mid
+  - m9_late
+  - post_lapse
+  - unknown
+
+triggers:
+  - market_drawdown
+  - negative_returns
+  - first_statement
+  - payment_failure
+  - mandate_issue
+  - bank_issue
+  - salary_delay
+  - job_change
+  - income_volatility
+  - emergency_expense
+  - liquidity_need
+  - goal_doubt
+  - goal_achieved
+  - life_event
+  - trust_shock
+  - news_event
+  - finfluencer_advice
+  - friend_family_advice
+  - product_comparison
+  - app_friction
+  - product_suspension
+  - support_failure
+  - notification_fatigue
+  - tax
+  - bonus_or_raise
+  - other
+  - unknown
+
+behaviors:
+  - started_sip
+  - increased_sip
+  - decreased_sip
+  - paused_sip
+  - stopped_sip
+  - restarted_sip
+  - switched_product
+  - withdrew
+  - checked_frequently
+  - checked_rarely
+  - avoided_app
+  - sought_help
+  - complained
+  - recommended
+  - did_nothing
+  - other
+  - unknown
+
+emotions:
+  - anxiety
+  - fear
+  - shame
+  - embarrassment
+  - confusion
+  - frustration
+  - anger
+  - distrust
+  - disappointment
+  - apathy
+  - regret
+  - relief
+  - pride
+  - confidence
+  - neutral
+  - unknown
+
+expectations:
+  - guaranteed_returns
+  - linear_growth
+  - fd_like_safety
+  - quick_returns
+  - beat_inflation
+  - build_wealth
+  - goal_progress
+  - learn_investing
+  - tax_saving
+  - discipline
+  - other
+  - unknown
+
+help_seeking:
+  - friend_family
+  - youtube
+  - reddit
+  - google_search
+  - customer_support
+  - bank
+  - ca_advisor
+  - app_help
+  - social_media
+  - none
+  - other
+  - unknown
+
+outcomes:
+  - continues
+  - paused
+  - stopped
+  - returned
+  - reduced
+  - increased
+  - unknown
+
+segments:
+  income_stability:
+    - salaried
+    - variable
+    - gig
+    - student
+    - business
+    - retired
+    - unknown
+  age_band:
+    - "18-24"
+    - "25-29"
+    - "30-35"
+    - "36-45"
+    - "46+"
+    - unknown
+  source_of_money:
+    - own_income
+    - family
+    - bonus
+    - savings
+    - loan
+    - unknown
+  influence:
+    - self
+    - friend_family
+    - youtube
+    - employer
+    - ca_advisor
+    - social_media
+    - unknown
+  ticket_size:
+    - small
+    - medium
+    - large
+    - unknown
+  goal_type:
+    - named_goal
+    - wealth
+    - tax
+    - retirement
+    - education
+    - emergency
+    - unspecified
+    - unknown
+
+confidence:
+  - high
+  - medium
+  - low

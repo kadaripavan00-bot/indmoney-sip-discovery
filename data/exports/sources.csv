@@ -1,0 +1,17 @@
+﻿source,signals,documents,lapse_rate,lapse_display,known_outcomes,top_theme
+reddit,122,120,0.8064516129032258,81%,62,other_unclassified
+play_store:Coin by Zerodha,48,48,0.0,n/a,0,other_unclassified
+app_store:Coin by Zerodha,35,35,0.0,0%,1,other_unclassified
+play_store:Kuvera,30,30,0.375,38%,8,positive_continuation
+play_store:ET Money,24,24,1.0,100%,2,other_unclassified
+app_store:ET Money,19,19,1.0,100%,5,other_unclassified
+app_store:Paytm Money,15,15,0.0,n/a,0,other_unclassified
+play_store:Paytm Money,12,12,0.0,n/a,0,other_unclassified
+app_store:Kuvera,8,8,1.0,100%,2,mandate_friction
+play_store:Groww,6,6,0.0,n/a,0,positive_continuation
+app_store:Groww,3,3,0.0,n/a,0,other_unclassified
+forum:tradingqna,3,3,0.0,n/a,0,positive_continuation
+youtube,3,3,0.0,n/a,0,other_unclassified
+forum:valuepickr,3,3,0.0,n/a,0,other_unclassified
+play_store:INDmoney,2,2,0.0,n/a,0,mandate_friction
+app_store:INDmoney,1,1,1.0,100%,1,other_unclassified

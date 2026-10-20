@@ -1,0 +1,833 @@
+{
+  "generated_at": "2026-10-20T10:58:55.210306Z",
+  "totals": {
+    "documents": 8115,
+    "deep_coded_documents": 1726,
+    "relevant_documents": 722,
+    "signals": 334,
+    "documents_with_signals": 332
+  },
+  "themes": [
+    {
+      "slug": "mandate_friction",
+      "name": "Failed debits and mandate breakage",
+      "kind": "problem",
+      "definition": "A debit, UPI Autopay, NACH mandate, bank link, or bank-side block failed or required repair.",
+      "signals": 59,
+      "documents": 59,
+      "share_signals": 0.17664670658682635,
+      "share_signal_docs": 0.17771084337349397,
+      "share_deep_coded_docs": 0.034183082271147164,
+      "lapse_signals": 0,
+      "continue_signals": 0,
+      "known_outcome_signals": 0,
+      "outcome_known": false,
+      "lapse_rate": 0.7777777777777778,
+      "baseline_lapse_rate": 0.7777777777777778,
+      "lift": 1.0,
+      "avg_confidence": 0.9769491525423729,
+      "evidence_strength": 0.9769491525423729,
+      "solvability": 0.9,
+      "effort": 0.4,
+      "priority": 3,
+      "sources": [
+        [
+          "app_store:Coin by Zerodha",
+          13
+        ],
+        [
+          "play_store:Coin by Zerodha",
+          13
+        ],
+        [
+          "reddit",
+          12
+        ]
+      ],
+      "stages": [
+        [
+          "m0_setup",
+          18
+        ],
+        [
+          "m3_early",
+          2
+        ],
+        [
+          "m6_mid",
+          1
+        ]
+      ],
+      "interventions": [
+        "A pre-debit health check that flags a weak mandate, low balance, or bank issue.",
+        "A three-day pre-debit alert with a one-tap repair or top-up path.",
+        "Auto-retry with a plain-language reason and a fallback payment method."
+      ],
+      "reach_norm": 1.0,
+      "severity_norm": 0.0,
+      "severity_for_score": 0.35,
+      "score_note": "unresolved outcome; friction prior",
+      "opportunity_score": 70.7,
+      "rank": 1,
+      "lapse_display": "n/a",
+      "lift_display": "n/a"
+    },
+    {
+      "slug": "cancellation_friction",
+      "name": "Can't stop or fix it",
+      "kind": "problem",
+      "definition": "The investor tried to cancel, pause, or repair a SIP and the app, mandate, or support flow did not work as expected.",
+      "signals": 38,
+      "documents": 38,
+      "share_signals": 0.11377245508982035,
+      "share_signal_docs": 0.1144578313253012,
+      "share_deep_coded_docs": 0.0220162224797219,
+      "lapse_signals": 17,
+      "continue_signals": 2,
+      "known_outcome_signals": 19,
+      "outcome_known": true,
+      "lapse_rate": 0.8947368421052632,
+      "baseline_lapse_rate": 0.7777777777777778,
+      "lift": 1.150375939849624,
+      "avg_confidence": 0.9642105263157895,
+      "evidence_strength": 0.9642105263157895,
+      "solvability": 0.9,
+      "effort": 0.3,
+      "priority": 2,
+      "sources": [
+        [
+          "reddit",
+          17
+        ],
+        [
+          "play_store:ET Money",
+          4
+        ],
+        [
+          "play_store:Paytm Money",
+          4
+        ]
+      ],
+      "stages": [
+        [
+          "m0_setup",
+          3
+        ],
+        [
+          "m6_mid",
+          2
+        ]
+      ],
+      "interventions": [
+        "A pause option beside cancel, with a clear effective date and one-tap resume.",
+        "A cancellation status tracker: requested, effective, refunded, closed.",
+        "A support escalation path with a named owner and a response-time promise."
+      ],
+      "reach_norm": 0.6440677966101694,
+      "severity_norm": 0.5263157894736844,
+      "severity_for_score": 0.5263157894736844,
+      "score_note": "empirical lapse lift",
+      "opportunity_score": 65.8,
+      "rank": 2,
+      "lapse_display": "89%",
+      "lift_display": "1.15x"
+    },
+    {
+      "slug": "positive_continuation",
+      "name": "What keeps SIPs alive",
+      "kind": "protective",
+      "definition": "The investor continued, increased, restarted, or returned to the SIP, often through a drawdown, a cash-flow squeeze, or a life event.",
+      "signals": 49,
+      "documents": 49,
+      "share_signals": 0.1467065868263473,
+      "share_signal_docs": 0.14759036144578314,
+      "share_deep_coded_docs": 0.028389339513325607,
+      "lapse_signals": 0,
+      "continue_signals": 18,
+      "known_outcome_signals": 18,
+      "outcome_known": true,
+      "lapse_rate": 0.0,
+      "baseline_lapse_rate": 0.7777777777777778,
+      "lift": 0.0,
+      "avg_confidence": 0.9653061224489795,
+      "evidence_strength": 0.9653061224489795,
+      "solvability": 0.65,
+      "effort": 0.3,
+      "priority": 99,
+      "sources": [
+        [
+          "reddit",
+          24
+        ],
+        [
+          "play_store:Kuvera",
+          15
+        ],
+        [
+          "forum:tradingqna",
+          2
+        ]
+      ],
+      "stages": [
+        [
+          "m0_setup",
+          15
+        ],
+        [
+          "m9_late",
+          7
+        ],
+        [
+          "post_lapse",
+          2
+        ]
+      ],
+      "interventions": [
+        "Celebrate goal progress and streak milestones without FOMO or urgency.",
+        "A 'you stayed invested through...' recap that reinforces the identity, not the return.",
+        "Community stories and human encouragement at the moments that usually trigger a stop."
+      ],
+      "reach_norm": 0.8305084745762713,
+      "severity_norm": 0.0,
+      "severity_for_score": 0.0,
+      "score_note": "empirical lapse lift",
+      "opportunity_score": 53.8,
+      "rank": 3,
+      "lapse_display": "0%",
+      "lift_display": "n/a (protective)"
+    },
+    {
+      "slug": "cashflow_shock",
+      "name": "Cash-flow shocks and competing commitments",
+      "kind": "problem",
+      "definition": "A salary delay, job change, income volatility, emergency expense, liquidity need, or life event made the SIP unaffordable.",
+      "signals": 14,
+      "documents": 14,
+      "share_signals": 0.041916167664670656,
+      "share_signal_docs": 0.04216867469879518,
+      "share_deep_coded_docs": 0.008111239860950173,
+      "lapse_signals": 4,
+      "continue_signals": 0,
+      "known_outcome_signals": 4,
+      "outcome_known": true,
+      "lapse_rate": 1.0,
+      "baseline_lapse_rate": 0.7777777777777778,
+      "lift": 1.2857142857142856,
+      "avg_confidence": 0.9514285714285714,
+      "evidence_strength": 0.444,
+      "solvability": 0.8,
+      "effort": 0.45,
+      "priority": 4,
+      "sources": [
+        [
+          "reddit",
+          11
+        ],
+        [
+          "app_store:Paytm Money",
+          1
+        ],
+        [
+          "app_store:ET Money",
+          1
+        ]
+      ],
+      "stages": [
+        [
+          "m9_late",
+          2
+        ],
+        [
+          "m6_mid",
+          1
+        ],
+        [
+          "m3_early",
+          1
+        ]
+      ],
+      "interventions": [
+        "A 1-3 month pause with automatic resume, instead of a permanent stop.",
+        "A step-down amount that preserves the habit through a temporary squeeze.",
+        "Salary-cycle alignment, an emergency-fund nudge, and a job-loss grace window."
+      ],
+      "reach_norm": 0.23728813559322035,
+      "severity_norm": 1.0,
+      "severity_for_score": 1.0,
+      "score_note": "empirical lapse lift",
+      "opportunity_score": 52.5,
+      "rank": 4,
+      "lapse_display": "100%",
+      "lift_display": "1.29x"
+    },
+    {
+      "slug": "goal_competition",
+      "name": "Which fund, which goal?",
+      "kind": "problem",
+      "definition": "The investor is unsure whether the SIP still fits the goal, is comparing products, or is redirecting money to another goal.",
+      "signals": 6,
+      "documents": 6,
+      "share_signals": 0.017964071856287425,
+      "share_signal_docs": 0.018072289156626505,
+      "share_deep_coded_docs": 0.0034762456546929316,
+      "lapse_signals": 1,
+      "continue_signals": 0,
+      "known_outcome_signals": 1,
+      "outcome_known": true,
+      "lapse_rate": 1.0,
+      "baseline_lapse_rate": 0.7777777777777778,
+      "lift": 1.2857142857142856,
+      "avg_confidence": 0.9433333333333334,
+      "evidence_strength": 0.18866666666666668,
+      "solvability": 0.75,
+      "effort": 0.45,
+      "priority": 7,
+      "sources": [
+        [
+          "reddit",
+          4
+        ],
+        [
+          "app_store:ET Money",
+          1
+        ],
+        [
+          "play_store:Kuvera",
+          1
+        ]
+      ],
+      "stages": [
+        [
+          "m0_setup",
+          1
+        ]
+      ],
+      "interventions": [
+        "One goal per SIP, with a goal-progress view and a plain-language fit check.",
+        "House, wedding, education, and retirement planners that show the trade-off.",
+        "A pause-and-resume path for short-term goals, instead of stopping the habit."
+      ],
+      "reach_norm": 0.1016949152542373,
+      "severity_norm": 1.0,
+      "severity_for_score": 1.0,
+      "score_note": "empirical lapse lift",
+      "opportunity_score": 43.1,
+      "rank": 5,
+      "lapse_display": "100%",
+      "lift_display": "1.29x"
+    },
+    {
+      "slug": "market_panic",
+      "name": "Market noise and loss aversion",
+      "kind": "problem",
+      "definition": "A market fall, negative returns, news, or advice from a creator or friend triggered anxiety, checking, or a stop.",
+      "signals": 31,
+      "documents": 31,
+      "share_signals": 0.09281437125748503,
+      "share_signal_docs": 0.09337349397590361,
+      "share_deep_coded_docs": 0.017960602549246814,
+      "lapse_signals": 6,
+      "continue_signals": 5,
+      "known_outcome_signals": 11,
+      "outcome_known": true,
+      "lapse_rate": 0.5454545454545454,
+      "baseline_lapse_rate": 0.7777777777777778,
+      "lift": 0.7012987012987012,
+      "avg_confidence": 0.9670967741935484,
+      "evidence_strength": 0.9670967741935484,
+      "solvability": 0.75,
+      "effort": 0.5,
+      "priority": 5,
+      "sources": [
+        [
+          "reddit",
+          25
+        ],
+        [
+          "play_store:Coin by Zerodha",
+          4
+        ],
+        [
+          "app_store:Coin by Zerodha",
+          2
+        ]
+      ],
+      "stages": [
+        [
+          "m9_late",
+          6
+        ],
+        [
+          "m6_mid",
+          2
+        ],
+        [
+          "m3_early",
+          2
+        ]
+      ],
+      "interventions": [
+        "A drawdown explainer that shows goal progress, not only the return number.",
+        "A 'what happens if you stop' calculator, framed as a trade-off, not a threat.",
+        "An opt-in human call or community story for investors who are panicking."
+      ],
+      "reach_norm": 0.5254237288135594,
+      "severity_norm": 0.0,
+      "severity_for_score": 0.0,
+      "score_note": "empirical lapse lift",
+      "opportunity_score": 42.9,
+      "rank": 6,
+      "lapse_display": "55%",
+      "lift_display": "0.70x"
+    },
+    {
+      "slug": "expectation_gap",
+      "name": "Returns didn't match the promise",
+      "kind": "problem",
+      "definition": "The investor expected linear, guaranteed, or market-beating returns and was disappointed by the first statement, a flat year, or a loss.",
+      "signals": 3,
+      "documents": 3,
+      "share_signals": 0.008982035928143712,
+      "share_signal_docs": 0.009036144578313253,
+      "share_deep_coded_docs": 0.0017381228273464658,
+      "lapse_signals": 0,
+      "continue_signals": 0,
+      "known_outcome_signals": 0,
+      "outcome_known": false,
+      "lapse_rate": 0.7777777777777778,
+      "baseline_lapse_rate": 0.7777777777777778,
+      "lift": 1.0,
+      "avg_confidence": 1.0,
+      "evidence_strength": 0.1,
+      "solvability": 0.8,
+      "effort": 0.35,
+      "priority": 6,
+      "sources": [
+        [
+          "reddit",
+          3
+        ]
+      ],
+      "stages": [
+        [
+          "m9_late",
+          1
+        ],
+        [
+          "m6_mid",
+          1
+        ]
+      ],
+      "interventions": [
+        "Expectation-setting at onboarding: a range of outcomes, time horizon, and risk.",
+        "A first-statement explainer that separates XIRR, absolute return, and market noise.",
+        "A 'why your portfolio is down' checklist that ends with a clear next step."
+      ],
+      "reach_norm": 0.05084745762711865,
+      "severity_norm": 0.0,
+      "severity_for_score": 0.35,
+      "score_note": "unresolved outcome; friction prior",
+      "opportunity_score": 24.0,
+      "rank": 7,
+      "lapse_display": "n/a",
+      "lift_display": "n/a"
+    },
+    {
+      "slug": "product_confusion",
+      "name": "I don't know what I bought",
+      "kind": "problem",
+      "definition": "The investor is confused about direct vs regular, NAV, fund category, or which product is actually being debited.",
+      "signals": 1,
+      "documents": 1,
+      "share_signals": 0.0029940119760479044,
+      "share_signal_docs": 0.0030120481927710845,
+      "share_deep_coded_docs": 0.0005793742757821553,
+      "lapse_signals": 0,
+      "continue_signals": 0,
+      "known_outcome_signals": 0,
+      "outcome_known": false,
+      "lapse_rate": 0.7777777777777778,
+      "baseline_lapse_rate": 0.7777777777777778,
+      "lift": 1.0,
+      "avg_confidence": 1.0,
+      "evidence_strength": 0.03333333333333333,
+      "solvability": 0.8,
+      "effort": 0.35,
+      "priority": 8,
+      "sources": [
+        [
+          "reddit",
+          1
+        ]
+      ],
+      "stages": [
+        [
+          "m0_setup",
+          1
+        ]
+      ],
+      "interventions": [
+        "A 'what am I invested in' statement with direct/regular and expense-ratio clarity.",
+        "A plain-language fund comparison that does not recommend a specific fund.",
+        "A human callback or glossary for first-time investors."
+      ],
+      "reach_norm": 0.016949152542372885,
+      "severity_norm": 0.0,
+      "severity_for_score": 0.35,
+      "score_note": "unresolved outcome; friction prior",
+      "opportunity_score": 21.7,
+      "rank": 8,
+      "lapse_display": "n/a",
+      "lift_display": "n/a"
+    },
+    {
+      "slug": "forced_pause",
+      "name": "Paused by the system, not the investor",
+      "kind": "problem",
+      "definition": "The SIP or fund was paused, suspended, or closed by an AMC, platform, or regulator. The investor did not choose to stop.",
+      "signals": 7,
+      "documents": 7,
+      "share_signals": 0.020958083832335328,
+      "share_signal_docs": 0.02108433734939759,
+      "share_deep_coded_docs": 0.004055619930475087,
+      "lapse_signals": 1,
+      "continue_signals": 1,
+      "known_outcome_signals": 2,
+      "outcome_known": true,
+      "lapse_rate": 0.5,
+      "baseline_lapse_rate": 0.7777777777777778,
+      "lift": 0.6428571428571428,
+      "avg_confidence": 1.0,
+      "evidence_strength": 0.23333333333333334,
+      "solvability": 0.85,
+      "effort": 0.35,
+      "priority": 1,
+      "sources": [
+        [
+          "reddit",
+          6
+        ],
+        [
+          "app_store:Coin by Zerodha",
+          1
+        ]
+      ],
+      "stages": [
+        [
+          "post_lapse",
+          1
+        ],
+        [
+          "m6_mid",
+          1
+        ],
+        [
+          "m3_early",
+          1
+        ]
+      ],
+      "interventions": [
+        "Proactive notice with the reason, expected duration, and what happens to the instalment.",
+        "A clear alternative route or fund option, without recommending a specific fund.",
+        "Auto-resume when the restriction lifts, with a confirmation and no penalty."
+      ],
+      "reach_norm": 0.11864406779661017,
+      "severity_norm": 0.0,
+      "severity_for_score": 0.0,
+      "score_note": "empirical lapse lift",
+      "opportunity_score": 19.7,
+      "rank": 9,
+      "lapse_display": "50%",
+      "lift_display": "0.64x"
+    },
+    {
+      "slug": "habit_decay",
+      "name": "Out of sight, out of mind",
+      "kind": "problem",
+      "definition": "The investor forgot, avoided the app, or stopped paying attention; the SIP lapsed quietly rather than through a single dramatic event.",
+      "signals": 5,
+      "documents": 5,
+      "share_signals": 0.014970059880239521,
+      "share_signal_docs": 0.015060240963855422,
+      "share_deep_coded_docs": 0.0028968713789107765,
+      "lapse_signals": 1,
+      "continue_signals": 1,
+      "known_outcome_signals": 2,
+      "outcome_known": true,
+      "lapse_rate": 0.5,
+      "baseline_lapse_rate": 0.7777777777777778,
+      "lift": 0.6428571428571428,
+      "avg_confidence": 0.8640000000000001,
+      "evidence_strength": 0.14400000000000002,
+      "solvability": 0.7,
+      "effort": 0.3,
+      "priority": 9,
+      "sources": [
+        [
+          "app_store:Coin by Zerodha",
+          2
+        ],
+        [
+          "reddit",
+          1
+        ],
+        [
+          "app_store:Kuvera",
+          1
+        ]
+      ],
+      "stages": [],
+      "interventions": [
+        "A monthly goal-progress recap, not a market-noise feed.",
+        "A two-missed-debit re-engagement sequence with a one-tap repair.",
+        "A low-effort 'SIP health score' that makes the next action obvious."
+      ],
+      "reach_norm": 0.08474576271186442,
+      "severity_norm": 0.0,
+      "severity_for_score": 0.0,
+      "score_note": "empirical lapse lift",
+      "opportunity_score": 15.1,
+      "rank": 10,
+      "lapse_display": "50%",
+      "lift_display": "0.64x"
+    },
+    {
+      "slug": "other_unclassified",
+      "name": "Other / unclassified",
+      "kind": "other",
+      "definition": "A grounded signal that does not fit the current theme map.",
+      "signals": 0,
+      "documents": 0,
+      "share_signals": 0.0,
+      "share_signal_docs": 0.0,
+      "share_deep_coded_docs": 0.0,
+      "lapse_signals": 0,
+      "continue_signals": 0,
+      "known_outcome_signals": 0,
+      "outcome_known": false,
+      "lapse_rate": 0.7777777777777778,
+      "baseline_lapse_rate": 0.7777777777777778,
+      "lift": 1.0,
+      "avg_confidence": 0.0,
+      "evidence_strength": 0.0,
+      "solvability": 0.4,
+      "effort": 0.5,
+      "priority": 100,
+      "sources": [],
+      "stages": [],
+      "interventions": [
+        "Review manually before acting."
+      ],
+      "reach_norm": 0.0,
+      "severity_norm": 0.0,
+      "severity_for_score": 0.35,
+      "score_note": "unresolved outcome; friction prior",
+      "opportunity_score": 14.4,
+      "rank": 11,
+      "lapse_display": "n/a",
+      "lift_display": "n/a"
+    }
+  ],
+  "sources": [
+    {
+      "source": "reddit",
+      "signals": 122,
+      "documents": 120,
+      "lapse_rate": 0.8064516129032258,
+      "lapse_display": "81%",
+      "known_outcomes": 62,
+      "top_theme": "other_unclassified"
+    },
+    {
+      "source": "play_store:Coin by Zerodha",
+      "signals": 48,
+      "documents": 48,
+      "lapse_rate": 0.0,
+      "lapse_display": "n/a",
+      "known_outcomes": 0,
+      "top_theme": "other_unclassified"
+    },
+    {
+      "source": "app_store:Coin by Zerodha",
+      "signals": 35,
+      "documents": 35,
+      "lapse_rate": 0.0,
+      "lapse_display": "0%",
+      "known_outcomes": 1,
+      "top_theme": "other_unclassified"
+    },
+    {
+      "source": "play_store:Kuvera",
+      "signals": 30,
+      "documents": 30,
+      "lapse_rate": 0.375,
+      "lapse_display": "38%",
+      "known_outcomes": 8,
+      "top_theme": "positive_continuation"
+    },
+    {
+      "source": "play_store:ET Money",
+      "signals": 24,
+      "documents": 24,
+      "lapse_rate": 1.0,
+      "lapse_display": "100%",
+      "known_outcomes": 2,
+      "top_theme": "other_unclassified"
+    },
+    {
+      "source": "app_store:ET Money",
+      "signals": 19,
+      "documents": 19,
+      "lapse_rate": 1.0,
+      "lapse_display": "100%",
+      "known_outcomes": 5,
+      "top_theme": "other_unclassified"
+    },
+    {
+      "source": "app_store:Paytm Money",
+      "signals": 15,
+      "documents": 15,
+      "lapse_rate": 0.0,
+      "lapse_display": "n/a",
+      "known_outcomes": 0,
+      "top_theme": "other_unclassified"
+    },
+    {
+      "source": "play_store:Paytm Money",
+      "signals": 12,
+      "documents": 12,
+      "lapse_rate": 0.0,
+      "lapse_display": "n/a",
+      "known_outcomes": 0,
+      "top_theme": "other_unclassified"
+    },
+    {
+      "source": "app_store:Kuvera",
+      "signals": 8,
+      "documents": 8,
+      "lapse_rate": 1.0,
+      "lapse_display": "100%",
+      "known_outcomes": 2,
+      "top_theme": "mandate_friction"
+    },
+    {
+      "source": "play_store:Groww",
+      "signals": 6,
+      "documents": 6,
+      "lapse_rate": 0.0,
+      "lapse_display": "n/a",
+      "known_outcomes": 0,
+      "top_theme": "positive_continuation"
+    },
+    {
+      "source": "app_store:Groww",
+      "signals": 3,
+      "documents": 3,
+      "lapse_rate": 0.0,
+      "lapse_display": "n/a",
+      "known_outcomes": 0,
+      "top_theme": "other_unclassified"
+    },
+    {
+      "source": "forum:tradingqna",
+      "signals": 3,
+      "documents": 3,
+      "lapse_rate": 0.0,
+      "lapse_display": "n/a",
+      "known_outcomes": 0,
+      "top_theme": "positive_continuation"
+    },
+    {
+      "source": "youtube",
+      "signals": 3,
+      "documents": 3,
+      "lapse_rate": 0.0,
+      "lapse_display": "n/a",
+      "known_outcomes": 0,
+      "top_theme": "other_unclassified"
+    },
+    {
+      "source": "forum:valuepickr",
+      "signals": 3,
+      "documents": 3,
+      "lapse_rate": 0.0,
+      "lapse_display": "n/a",
+      "known_outcomes": 0,
+      "top_theme": "other_unclassified"
+    },
+    {
+      "source": "play_store:INDmoney",
+      "signals": 2,
+      "documents": 2,
+      "lapse_rate": 0.0,
+      "lapse_display": "n/a",
+      "known_outcomes": 0,
+      "top_theme": "mandate_friction"
+    },
+    {
+      "source": "app_store:INDmoney",
+      "signals": 1,
+      "documents": 1,
+      "lapse_rate": 1.0,
+      "lapse_display": "100%",
+      "known_outcomes": 1,
+      "top_theme": "other_unclassified"
+    }
+  ],
+  "stages": [
+    {
+      "journey_stage": "m0_setup",
+      "signals": 37,
+      "documents": 37,
+      "lapse_rate": 0.0,
+      "lapse_display": "n/a",
+      "known_outcomes": 0,
+      "top_theme": "mandate_friction"
+    },
+    {
+      "journey_stage": "m9_late",
+      "signals": 22,
+      "documents": 22,
+      "lapse_rate": 0.75,
+      "lapse_display": "75%",
+      "known_outcomes": 8,
+      "top_theme": "other_unclassified"
+    },
+    {
+      "journey_stage": "m3_early",
+      "signals": 10,
+      "documents": 10,
+      "lapse_rate": 0.5,
+      "lapse_display": "50%",
+      "known_outcomes": 2,
+      "top_theme": "other_unclassified"
+    },
+    {
+      "journey_stage": "m6_mid",
+      "signals": 7,
+      "documents": 7,
+      "lapse_rate": 0.6666666666666666,
+      "lapse_display": "67%",
+      "known_outcomes": 3,
+      "top_theme": "cancellation_friction"
+    },
+    {
+      "journey_stage": "post_lapse",
+      "signals": 3,
+      "documents": 3,
+      "lapse_rate": 0.3333333333333333,
+      "lapse_display": "33%",
+      "known_outcomes": 3,
+      "top_theme": "forced_pause"
+    },
+    {
+      "journey_stage": "pre_start",
+      "signals": 3,
+      "documents": 3,
+      "lapse_rate": 0.0,
+      "lapse_display": "n/a",
+      "known_outcomes": 0,
+      "top_theme": "other_unclassified"
+    }
+  ]
+}

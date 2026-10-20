@@ -1,0 +1,26 @@
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+.next/
+dist/
+
+# Data and logs
+data/raw/
+data/processed/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,45 @@
+version: "0.2"
+
+providers:
+  gemini:
+    api_key_env: GEMINI_API_KEY
+    models:
+      bulk: gemini/gemini-3.5-flash-lite
+      hard: gemini/gemini-3.5-flash
+      synthesis: gemini/gemini-3.5-flash
+      embeddings: gemini/gemini-embedding-001
+
+  groq:
+    api_key_env: GROQ_API_KEY
+    models:
+      bulk: groq/openai/gpt-oss-20b
+      hard: groq/openai/gpt-oss-120b
+      synthesis: groq/openai/gpt-oss-120b
+      validation: groq/openai/gpt-oss-120b
+
+  mistral:
+    api_key_env: MISTRAL_API_KEY
+    models:
+      validation: mistral/ministral-8b-latest
+
+  cohere:
+    api_key_env: COHERE_API_KEY
+    models:
+      validation: cohere/command-a-03-2025
+
+routing:
+  bulk: [gemini, groq]
+  hard: [gemini, groq]
+  synthesis: [gemini, groq]
+  validation: [groq, gemini]
+
+extraction:
+  temperature: 0
+  max_tokens: 2400
+  max_total_tokens: 1500000
+  batch_size: 6
+  quote_verification: true
+  prompt_version: "extract_signals_v0.8"
+  min_interval_seconds:
+    gemini: 4.5
+    groq: 1.5

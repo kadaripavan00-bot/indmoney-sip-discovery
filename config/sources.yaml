@@ -1,0 +1,210 @@
+play_store:
+  country: in
+  languages: [en, hi]
+  reviews_per_app: 1200
+  apps:
+    indmoney:
+      app_id: in.indwealth
+      name: INDmoney
+      role: focal
+    groww:
+      app_id: com.nextbillion.groww
+      name: Groww
+      role: competitor
+    zerodha_coin:
+      app_id: com.zerodha.coin
+      name: Coin by Zerodha
+      role: competitor
+    kuvera:
+      app_id: com.gooogle.android.kuvera.app
+      name: Kuvera
+      role: competitor
+    etmoney:
+      app_id: com.smartspends
+      name: ET Money
+      role: competitor
+    paytm_money:
+      app_id: com.paytmmoney
+      name: Paytm Money
+      role: competitor
+
+app_store:
+  country: in
+  pages: 20
+  apps:
+    indmoney:
+      app_id: 1450178837
+      name: INDmoney
+      role: focal
+    groww:
+      app_id: 1404871703
+      name: Groww
+      role: competitor
+    zerodha_coin:
+      app_id: 1392892554
+      name: Coin by Zerodha
+      role: competitor
+    kuvera:
+      app_id: 1329701793
+      name: Kuvera
+      role: competitor
+    etmoney:
+      app_id: 1212752482
+      name: ET Money
+      role: competitor
+    paytm_money:
+      app_id: 1344431352
+      name: Paytm Money
+      role: competitor
+
+reddit:
+  subreddits:
+    - IndiaInvestments
+    - personalfinanceindia
+    - IndianStreetBets
+    - mutualfunds
+    - IndianStockMarket
+    - DalalStreetTalks
+    - IndiaTax
+    - FIREIndia
+    - IndiaFIRE
+  queries:
+    - "SIP stop"
+    - "SIP stopped"
+    - "stop SIP"
+    - "SIP pause"
+    - "pause SIP"
+    - "SIP cancel"
+    - "SIP cancelled"
+    - "SIP cancellation"
+    - "SIP not stopped"
+    - "SIP loss"
+    - "mutual fund loss"
+    - "portfolio loss"
+    - "SIP increase"
+    - "SIP reduce"
+    - "SIP stopped due to"
+    - "SIP experience"
+    - "SIP 1 year"
+    - "SIP 2 years"
+    - "SIP 3 years"
+    - "SIP 5 years"
+    - "SIP review"
+    - "SIP portfolio"
+    - "SIP continue"
+    - "kept SIP"
+    - "SIP discipline"
+    - "SIP habit"
+    - "SIP emergency"
+    - "SIP job loss"
+    - "SIP salary"
+    - "SIP house"
+    - "SIP marriage"
+    - "mandate failed"
+    - "mandate rejected"
+    - "auto debit failed"
+    - "autopay issue"
+    - "SIP debit"
+    - "SIP not deducted"
+    - "SIP not debited"
+    - "first SIP"
+    - "first mutual fund"
+    - "mutual fund experience"
+    - "resumed SIP"
+    - "restarted SIP"
+  limit_per_query: 100
+
+youtube:
+  queries:
+    - "SIP for beginners India"
+    - "why my SIP is not growing"
+    - "should I stop my SIP"
+    - "SIP vs FD India"
+    - "first salary SIP"
+    - "SIP stopped"
+    - "SIP cancel"
+    - "SIP pause"
+    - "SIP loss"
+    - "mutual fund loss India"
+    - "SIP review 1 year"
+    - "SIP review 2 years"
+    - "SIP review 3 years"
+    - "Groww SIP review"
+    - "INDmoney SIP review"
+    - "Kuvera SIP review"
+    - "ET Money SIP review"
+    - "Paytm Money SIP review"
+    - "SIP mandate failed"
+    - "SIP auto debit failed"
+    - "first mutual fund investment India"
+    - "mutual fund portfolio review"
+    - "SIP discipline"
+    - "SIP success story"
+    - "SIP failure"
+  max_videos_per_query: 3
+  max_comments_per_video: 300
+
+forums:
+  valuepickr:
+    base_url: "https://forum.valuepickr.com"
+    max_topics: 30
+    queries:
+      - "SIP mutual fund"
+      - "SIP stop"
+      - "SIP stopped"
+      - "SIP pause"
+      - "SIP resume"
+      - "SIP cancel"
+      - "SIP debit failed"
+      - "mandate"
+      - "autopay"
+      - "mutual fund SIP experience"
+      - "SIP loss"
+      - "SIP not working"
+      - "first SIP"
+      - "SIP 1 year"
+      - "SIP 2 years"
+      - "SIP 3 years"
+      - "SIP portfolio"
+      - "mutual fund portfolio"
+      - "SIP investment"
+  tradingqna:
+    base_url: "https://tradingqna.com"
+    max_topics: 30
+    queries:
+      - "SIP"
+      - "mutual fund SIP"
+      - "SIP stop"
+      - "SIP stopped"
+      - "SIP pause"
+      - "SIP resume"
+      - "SIP cancel"
+      - "SIP debit failed"
+      - "mandate"
+      - "autopay"
+      - "SIP loss"
+      - "SIP not working"
+      - "first SIP"
+      - "SIP 1 year"
+      - "SIP 2 years"
+      - "SIP portfolio"
+
+relevance_keywords:
+  - sip
+  - mutual fund
+  - nav
+  - xirr
+  - folio
+  - mandate
+  - auto debit
+  - autopay
+  - instalment
+  - installment
+  - portfolio
+  - invest
+  - indmoney
+  - groww
+  - coin
+  - kuvera
+  - et money
+  - paytm money

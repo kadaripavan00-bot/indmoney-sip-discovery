@@ -1,0 +1,146 @@
+{
+  "generated_at": "2026-10-20T15:34:57.409544Z",
+  "passed": 26,
+  "total": 26,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "Corpus >= 5,000 documents",
+      "pass": true,
+      "detail": "8115"
+    },
+    {
+      "check": "Strict candidates >= 1,500",
+      "pass": true,
+      "detail": "1726"
+    },
+    {
+      "check": "Deep-coded >= 1,500",
+      "pass": true,
+      "detail": "1726"
+    },
+    {
+      "check": "Grounded signals >= 200",
+      "pass": true,
+      "detail": "334"
+    },
+    {
+      "check": "Every stored signal has a verifiable quote",
+      "pass": true,
+      "detail": "380 verified, 0 rejected"
+    },
+    {
+      "check": "Every active signal has at least one meaningful code",
+      "pass": true,
+      "detail": "334/334"
+    },
+    {
+      "check": "At least 75 documents have a resolved outcome",
+      "pass": true,
+      "detail": "80"
+    },
+    {
+      "check": "At least six problem themes",
+      "pass": true,
+      "detail": "9"
+    },
+    {
+      "check": "Gold set has 200 rows",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "Model swap covers >= 100 quota-sized items",
+      "pass": true,
+      "detail": "100"
+    },
+    {
+      "check": "Outcome kappa covers >= 60 resolved outcomes",
+      "pass": true,
+      "detail": "72"
+    },
+    {
+      "check": "Red-team suite has no failures",
+      "pass": true,
+      "detail": "15/15"
+    },
+    {
+      "check": "Evidence log PDF",
+      "pass": true,
+      "detail": "C:\\Users\\kadar\\indmoney-sip-discovery\\deliverables\\AI_Evidence_Log.pdf"
+    },
+    {
+      "check": "Evidence log CSV",
+      "pass": true,
+      "detail": "C:\\Users\\kadar\\indmoney-sip-discovery\\data\\exports\\ai_evidence_log.csv"
+    },
+    {
+      "check": "Evidence log JSONL",
+      "pass": true,
+      "detail": "C:\\Users\\kadar\\indmoney-sip-discovery\\data\\exports\\ai_evidence_log.jsonl"
+    },
+    {
+      "check": "Deck PPTX",
+      "pass": true,
+      "detail": "C:\\Users\\kadar\\indmoney-sip-discovery\\deliverables\\INDmoney_SIP_Discovery_Deck.pptx"
+    },
+    {
+      "check": "Deck PDF",
+      "pass": true,
+      "detail": "C:\\Users\\kadar\\indmoney-sip-discovery\\deliverables\\INDmoney_SIP_Discovery_Deck.pdf"
+    },
+    {
+      "check": "PRD PDF",
+      "pass": true,
+      "detail": "C:\\Users\\kadar\\indmoney-sip-discovery\\deliverables\\INDmoney_SIP_Discovery_PRD.pdf"
+    },
+    {
+      "check": "Case write-up PDF",
+      "pass": true,
+      "detail": "C:\\Users\\kadar\\indmoney-sip-discovery\\deliverables\\INDmoney_SIP_Case_Writeup.pdf"
+    },
+    {
+      "check": "Evidence log PDF has content",
+      "pass": true,
+      "detail": "17 pages"
+    },
+    {
+      "check": "PRD PDF has content",
+      "pass": true,
+      "detail": "16 pages"
+    },
+    {
+      "check": "Case write-up has content",
+      "pass": true,
+      "detail": "6 pages"
+    },
+    {
+      "check": "Deck has >= 15 slides",
+      "pass": true,
+      "detail": "19 slides"
+    },
+    {
+      "check": "Compiles: dashboard/app.py",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Compiles: src/analysis.py",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Compiles: src/reporting.py",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "facts": {
+    "documents": 8115,
+    "strict_candidates": 1726,
+    "deep_coded": 1726,
+    "signals": 334,
+    "signal_documents": 332,
+    "known_outcomes": 80
+  }
+}

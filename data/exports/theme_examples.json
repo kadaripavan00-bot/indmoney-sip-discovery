@@ -1,0 +1,610 @@
+{
+  "mandate_friction": [
+    {
+      "signal_id": 60,
+      "document_id": 1021,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/IndiaInvestments/comments/b4j439/mfu_has_stopped_epayeezz_how_to_start_new_sip_for/",
+      "quote": "When I opened my MFU account and tried to use the ePayEezz mandate, following massage is showing- \" Consequent to communication received from NPCI asking us to stop the e-NACH through e-sign process at MFU, we are constrained to discontinue ePayEezz immediately.",
+      "outcome": "unknown",
+      "journey_stage": "m0_setup",
+      "themes": [
+        "mandate_friction"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 71,
+      "document_id": 1069,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1varaq2/dont_invest_anything_until_you_have_a_few_lacs_fr/",
+      "quote": "I used to do SIP in college with my internship money. 15k stipend, 4k SIP. 1 month, the stipend got delayed by 2 days. Guess what. I didn't even have money to eat a sandwich for 2 days. The SIP autodeducted the money. Worse yet? It wasn't enough to cover the whole sip, so when I did get the money I had been hit with multiple 500rs penalties because I couldn't Autopay the SIP.",
+      "outcome": "unknown",
+      "journey_stage": "unknown",
+      "themes": [
+        "mandate_friction"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 93,
+      "document_id": 1124,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1um7hj4/sip_expired_in_a_few_days/",
+      "quote": "I started 3 SIPs a few days ago through Kuvera. I had set the auto debit date as 2nd of every month and then changed it to 5th a few days later. I got a message on whatsapp from one of the funds saying my SIP has expired.",
+      "outcome": "unknown",
+      "journey_stage": "m0_setup",
+      "themes": [
+        "mandate_friction",
+        "positive_continuation"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 95,
+      "document_id": 1138,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1cuve46/unintended_sip_creation_in_groww/",
+      "quote": "Accidentally created a SIP for ₹33,333 on Groww, don't have sufficient balance in my account. Requested cancellation, but unsure about consequences of insufficient balance and ECS auto debit failure.",
+      "outcome": "unknown",
+      "journey_stage": "m0_setup",
+      "themes": [
+        "mandate_friction"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 96,
+      "document_id": 1142,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/16p1wpy/kuvera_sip_1st_time/",
+      "quote": "Kuvera sip 1st time I set up mandate and all steps for sip nav date 20th. It didn't deduct any money till when 20th or so. Hence i thought there is some glitch. However i placed a one time of 500 and the money got deducted instantly.",
+      "outcome": "unknown",
+      "journey_stage": "m0_setup",
+      "themes": [
+        "mandate_friction"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "cancellation_friction": [
+    {
+      "signal_id": 47,
+      "document_id": 988,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/IndiaInvestments/comments/1rfv3xe/sip_cancellation_requested_but_amount_still/",
+      "quote": "I requested to cancel my monthly SIPs around Jan 25, but the Feb 1 SIP was still active and the money got deducted.",
+      "outcome": "unknown",
+      "journey_stage": "unknown",
+      "themes": [
+        "cancellation_friction"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 84,
+      "document_id": 1107,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1ro2wbc/mf_utility_how_to_use_this_months_scheduled_sip/",
+      "quote": "I want to temporarily pause this month's SIP deduction. I cannot find any pause option on the website. Can anyone help me how to exactly pause (not permanently cancel/delete) my SIP?",
+      "outcome": "paused",
+      "journey_stage": "unknown",
+      "themes": [
+        "cancellation_friction"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 87,
+      "document_id": 1115,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1ochaab/mutual_funds_amc_fund_and_normal_difference/",
+      "quote": "when I try to create an SIP, it gives me an option to invest as AMC SIP (where step up and pause options aren't available) and normal with step up and other things. Now I'm confused",
+      "outcome": "paused",
+      "journey_stage": "unknown",
+      "themes": [
+        "cancellation_friction"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 91,
+      "document_id": 1122,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1uzncju/another_significant_jump_need_help_planning_in/",
+      "quote": "20K SIP monthly (i did one fuck up which is cancelling the SIP after 5 months when i saw the economy crash and then after couple days instead of “clicking restart sip”, i decided to create a new SIP listing for the same MF 🥲)",
+      "outcome": "returned",
+      "journey_stage": "m6_mid",
+      "themes": [
+        "cancellation_friction",
+        "market_panic",
+        "positive_continuation"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 99,
+      "document_id": 1149,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/IndianStreetBets/comments/1uqyr7e/want_to_restart_investment_journey_which_app/",
+      "quote": "I used to invest with Angel one, But in the middle I had stopped investing and exited all of my investments. I want to move away from Angel one cause I don't like the UI much. But now I'm in a good position that I can restart SIPs.",
+      "outcome": "returned",
+      "journey_stage": "unknown",
+      "themes": [
+        "cancellation_friction",
+        "positive_continuation"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "positive_continuation": [
+    {
+      "signal_id": 51,
+      "document_id": 998,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/IndiaInvestments/comments/zol1dp/i_still_see_people_asking_whether_to_wait_for_a/",
+      "quote": "Never stopped my SIP even for one month. That's it. That's literally it. I just invested straight through the long flat period of 2018-19 and through COVID.",
+      "outcome": "continues",
+      "journey_stage": "unknown",
+      "themes": [
+        "market_panic",
+        "positive_continuation"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 56,
+      "document_id": 1008,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/IndiaInvestments/comments/pf4ajd/just_a_reminder_dont_be_this_personaka_you_cant/",
+      "quote": "I will keep my SIPs running. My monthly investment is around 1% of my total portfolio value, so I reckon that stopping a SIP and waiting for a correction is actually not worth the effort",
+      "outcome": "continues",
+      "journey_stage": "unknown",
+      "themes": [
+        "market_panic",
+        "positive_continuation"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 70,
+      "document_id": 1068,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1vbk1j1/do_you_still_follow_a_monthly_budget_after_your/",
+      "quote": "Bills are getting paid, SIPs are running on time, and I'm still saving money",
+      "outcome": "continues",
+      "journey_stage": "unknown",
+      "themes": [
+        "positive_continuation"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 74,
+      "document_id": 1079,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1u4iekg/not_satisfied_despite_investing_25_lacs_per_month/",
+      "quote": "I try step up SIP at least by 10% YoY. But I feel an intellectual like me who have proven my worth with evidence deserve better compensation growth. This is creating a lot of emotional stress and trauma since many years now.",
+      "outcome": "unknown",
+      "journey_stage": "unknown",
+      "themes": [
+        "positive_continuation"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 78,
+      "document_id": 1092,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1u6a88u/29m_12l_nw_want_a_europe_vacation/",
+      "quote": "Pausing My investment for 3 to 4 months to save liquid funds for the visa/trip. Once visa is approved, i will resume lumpsum/sip investment.",
+      "outcome": "returned",
+      "journey_stage": "m3_early",
+      "themes": [
+        "positive_continuation"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "cashflow_shock": [
+    {
+      "signal_id": 66,
+      "document_id": 1046,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1x104ae/need_a_reality_check_on_home_loan/",
+      "quote": "I have reduced my MF SIP to 10k per month so that I can save on the house fund.",
+      "outcome": "reduced",
+      "journey_stage": "unknown",
+      "themes": [
+        "cashflow_shock"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 67,
+      "document_id": 1048,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1wzolff/whats_the_ideal_investment_split/",
+      "quote": "Whenever I saw some expenses coming up, I would stop my investments for a month or two and then resume.",
+      "outcome": "unknown",
+      "journey_stage": "unknown",
+      "themes": [
+        "cashflow_shock"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 69,
+      "document_id": 1059,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1vwwd6w/emergency_fund_vs_sips/",
+      "quote": "I’m confused between two approaches: 1. Stop investing for a few months and aggressively build an emergency fund. 2. Start SIPs now and build the emergency fund alongside them.",
+      "outcome": "unknown",
+      "journey_stage": "unknown",
+      "themes": [
+        "cashflow_shock"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 72,
+      "document_id": 1071,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1v5z5wo/how_do_i_allocate_my_emergency_funds/",
+      "quote": "My idea was atleast 6 months of my salary so that I don't have to stop my SIPs and can cover atleast 9 months of expenses in case I lose my job or I end up with an unfortunate medical expense.",
+      "outcome": "unknown",
+      "journey_stage": "m6_mid",
+      "themes": [
+        "cashflow_shock"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 73,
+      "document_id": 1073,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1uj3dcb/not_sure_if_im_doing_the_right_thing/",
+      "quote": "For a year before our wedding, I stopped all new SIPs. Everything went into a wedding fund. On top of that, I had to withdraw from my investments for Gold. Wedding gold.",
+      "outcome": "stopped",
+      "journey_stage": "m9_late",
+      "themes": [
+        "cashflow_shock"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "goal_competition": [
+    {
+      "signal_id": 55,
+      "document_id": 1006,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/IndiaInvestments/comments/r6or9m/mofsp500_vs_mofn100fof_i_am_doing_sip_for_both/",
+      "quote": "MOFSP500 vs MOFN100FOF , I am doing SIP for both , should i stop one of these ?",
+      "outcome": "unknown",
+      "journey_stage": "unknown",
+      "themes": [
+        "goal_competition"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 81,
+      "document_id": 1101,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1taumfi/need_investment_advice_as_a_beginner/",
+      "quote": "Right now I have 2 ongoing SIPs: a) ICICI prudential nifty 50 index fund, b) Parag Parikh Flexi Cap fund. I put total 7k a month in SIP. I had another SIP that I have paused for now Quant ELSS tax saver fund.",
+      "outcome": "paused",
+      "journey_stage": "unknown",
+      "themes": [
+        "goal_competition"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 139,
+      "document_id": 1271,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/mutualfunds/comments/1tsv80a/first_time_investing_2l_need_help/",
+      "quote": "First time Investing ~ 2L / Need Help! Hi, 28 here. I broke my FD and I want to get into investing.",
+      "outcome": "unknown",
+      "journey_stage": "unknown",
+      "themes": [
+        "goal_competition"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 157,
+      "document_id": 1301,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/mutualfunds/comments/1vxbqz7/suggestions_can_do_upto_50k/",
+      "quote": "Recently change mirae asset midcap from 3 to 20K and stopped elss tax saver sip.",
+      "outcome": "unknown",
+      "journey_stage": "unknown",
+      "themes": [
+        "goal_competition"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 328,
+      "document_id": 4156,
+      "source": "play_store:Kuvera",
+      "url": "https://play.google.com/store/apps/details?id=com.gooogle.android.kuvera.app&reviewId=eeaa4d57-4325-4e7e-a3a7-f70263ad61fb",
+      "quote": "SIP for my tax saving fund was set up in one go",
+      "outcome": "unknown",
+      "journey_stage": "m0_setup",
+      "themes": [
+        "goal_competition",
+        "positive_continuation"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "market_panic": [
+    {
+      "signal_id": 50,
+      "document_id": 997,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/IndiaInvestments/comments/112xwd0/advice_needed_questions_for_people_with_long_term/",
+      "quote": "Now at the 3 year mark, my overall portfolio is 5% XIRR, and 3 of the above funds have changed rating from 5->3/2. I wanted to know a few things: If I should stop SIP in the existing schemes and start the SIP in different schemes",
+      "outcome": "unknown",
+      "journey_stage": "m9_late",
+      "themes": [
+        "market_panic"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 51,
+      "document_id": 998,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/IndiaInvestments/comments/zol1dp/i_still_see_people_asking_whether_to_wait_for_a/",
+      "quote": "Never stopped my SIP even for one month. That's it. That's literally it. I just invested straight through the long flat period of 2018-19 and through COVID.",
+      "outcome": "continues",
+      "journey_stage": "unknown",
+      "themes": [
+        "market_panic",
+        "positive_continuation"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 56,
+      "document_id": 1008,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/IndiaInvestments/comments/pf4ajd/just_a_reminder_dont_be_this_personaka_you_cant/",
+      "quote": "I will keep my SIPs running. My monthly investment is around 1% of my total portfolio value, so I reckon that stopping a SIP and waiting for a correction is actually not worth the effort",
+      "outcome": "continues",
+      "journey_stage": "unknown",
+      "themes": [
+        "market_panic",
+        "positive_continuation"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 58,
+      "document_id": 1013,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/IndiaInvestments/comments/k9z65x/my_story_of_regrets_and_realisations/",
+      "quote": "Then the big incident of Covid happened and market crashed. Initial I was very happy because I could get more units for the same price. But I still kept waiting for the prices to drop further.",
+      "outcome": "unknown",
+      "journey_stage": "unknown",
+      "themes": [
+        "market_panic"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 59,
+      "document_id": 1017,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/IndiaInvestments/comments/hm478o/did_your_portfolio_recover_from_the_crash_in_march/",
+      "quote": "I myself continued my investment journey of 4 years and witnessed the brain churning market drop that eroded away massive 27 % of my invested money (not including gains). I'm still in red but only by -1.05%. But I'm glad I didn't redeem and make a HUGE loss even though I was continuously doubting my decision under severe stress and anxiety.",
+      "outcome": "unknown",
+      "journey_stage": "m9_late",
+      "themes": [
+        "market_panic"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "expectation_gap": [
+    {
+      "signal_id": 123,
+      "document_id": 1237,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/mutualfunds/comments/1warft4/help_me_reallocate_2l_in_my_portfolio/",
+      "quote": "Im 28, currently investing 20k a month in SIP Risk tolerance - Moderate Goal: Wealth building Investment Horizon: 8-10years+ App: Groww Why I picked these funds? Based on research and peer opinion These are my SIPs PPFC - 5K UTI nifty 50 - 5k Bandhan small cap - 5k Invesco Nasdaq VOO - 5K I have attached my investments which are barely having any returns recently.",
+      "outcome": "unknown",
+      "journey_stage": "m9_late",
+      "themes": [
+        "market_panic",
+        "expectation_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 141,
+      "document_id": 1273,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/mutualfunds/comments/1t8fc4j/advice_needed/",
+      "quote": "Current situation: 💰 Portfolio: ~₹55L 💸 Margin funds: ~₹10L ➡️ Total exposure: ~₹65L 📅 Monthly SIP: ₹1.5L But honestly… last year’s returns really disappointed me 😅 and with rising oil prices ⛽ + global uncertainty 🌍, I don’t feel very bullish about the next 6–8 months either.",
+      "outcome": "unknown",
+      "journey_stage": "m6_mid",
+      "themes": [
+        "market_panic",
+        "expectation_gap"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 143,
+      "document_id": 1275,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/mutualfunds/comments/1sjihag/surviving_the_ruthless_indian_markets_anyone_else/",
+      "quote": "I’ve been reviewing my portfolio lately and seeing an XIRR of ~7% has honestly been quite disappointing 😔 I’m a long-term investor (15+ year horizon), but the last couple of years have really shaken my confidence in mutual funds.",
+      "outcome": "unknown",
+      "journey_stage": "unknown",
+      "themes": [
+        "market_panic",
+        "expectation_gap"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "product_confusion": [
+    {
+      "signal_id": 49,
+      "document_id": 994,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/IndiaInvestments/comments/1dxa3a7/does_anybody_what_is_happening_with_nippon_small/",
+      "quote": "When I tried to start an SIP I had an option to choose 'Direct'. But it still shows the same NAV (176), which means it is still a regular fund?",
+      "outcome": "unknown",
+      "journey_stage": "m0_setup",
+      "themes": [
+        "product_confusion"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "forced_pause": [
+    {
+      "signal_id": 61,
+      "document_id": 1027,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/IndiaInvestments/comments/1031fil/motilal_oswal_presented_bill_for_my_sp500_sip/",
+      "quote": "I had a 10K SIP in Motilal Oswal S&P500 which as we all know got paused due to the rule about foreign investment.",
+      "outcome": "paused",
+      "journey_stage": "unknown",
+      "themes": [
+        "forced_pause"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 75,
+      "document_id": 1083,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1wkfwky/icici_nasdaq_100_sip_locked_by_amc_where_is_my/",
+      "quote": "My SIP has been locked for modification probably coz of the SEBI overseas investment limit.",
+      "outcome": "unknown",
+      "journey_stage": "unknown",
+      "themes": [
+        "forced_pause"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 98,
+      "document_id": 1146,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/IndianStreetBets/comments/1wc9380/any_idea_when_will_sebi_restart_the_sip_for_us_mf/",
+      "quote": "I mistakenly stopped my SIP for motilal oswal s&p 500 index fund and wanted to restart the SIP, any idea when will SEBI restart the SIP for the US FoF MF. It has been over a year since the SIP is stopped.",
+      "outcome": "returned",
+      "journey_stage": "post_lapse",
+      "themes": [
+        "forced_pause",
+        "positive_continuation"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 114,
+      "document_id": 1211,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/mutualfunds/comments/1x7kt2m/emergency_fund_strategy_ideas/",
+      "quote": "Bucket 2 — Arbitrage mutual fund SIP: 10% of my monthly salary until I reach 6 months of expenses.",
+      "outcome": "unknown",
+      "journey_stage": "m6_mid",
+      "themes": [
+        "forced_pause"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 136,
+      "document_id": 1265,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/mutualfunds/comments/1up2tq8/portfolio_review_24_yo/",
+      "quote": "Most international funds are suspended due to the RBI overseas limit, so I took what was still open on Coin.",
+      "outcome": "unknown",
+      "journey_stage": "unknown",
+      "themes": [
+        "forced_pause"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "habit_decay": [
+    {
+      "signal_id": 181,
+      "document_id": 694,
+      "source": "app_store:Coin by Zerodha",
+      "url": "https://itunes.apple.com/in/review?id=1392892554&type=Purple%20Software",
+      "quote": "I used to get app notification when mutual fund orders were placed. Now I dont for last few months only an email which is easy to miss and causing pending payments",
+      "outcome": "unknown",
+      "journey_stage": "unknown",
+      "themes": [
+        "habit_decay"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 206,
+      "document_id": 6685,
+      "source": "app_store:Coin by Zerodha",
+      "url": "https://itunes.apple.com/in/review?id=1392892554&type=Purple%20Software",
+      "quote": "Many times i forget my SIP there should be an notification or alert to remember that there is a SIP today I can't make mandate payment also",
+      "outcome": "unknown",
+      "journey_stage": "unknown",
+      "themes": [
+        "mandate_friction",
+        "habit_decay"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 296,
+      "document_id": 3444,
+      "source": "play_store:Coin by Zerodha",
+      "url": "https://play.google.com/store/apps/details?id=com.zerodha.coin&reviewId=8becbdb8-1ce3-44f3-b370-76a7e2c085a9",
+      "quote": "Does not give me notifications for my SIPS. I specifically mean the SIP reminder to pay on the day of order placement.",
+      "outcome": "unknown",
+      "journey_stage": "unknown",
+      "themes": [
+        "habit_decay"
+      ],
+      "confidence": "high"
+    },
+    {
+      "signal_id": 92,
+      "document_id": 1123,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1upqzj6/none_of_us_can_actually_answer_whats_our_family/",
+      "quote": "My dad forgot he still had two mutual funds from a 2016 SIP that had been quietly auto-debiting for years.",
+      "outcome": "continues",
+      "journey_stage": "unknown",
+      "themes": [
+        "habit_decay",
+        "positive_continuation"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "signal_id": 225,
+      "document_id": 7072,
+      "source": "app_store:Kuvera",
+      "url": "https://itunes.apple.com/in/review?id=1329701793&type=Purple%20Software",
+      "quote": "I had started few years back. I was abroad. It was for app testing and responsiveness. But i forgot so they closed the SIP and did not cashed me out.",
+      "outcome": "stopped",
+      "journey_stage": "unknown",
+      "themes": [
+        "habit_decay"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "other_unclassified": []
+}
