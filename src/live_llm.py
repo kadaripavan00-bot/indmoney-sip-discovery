@@ -10,28 +10,48 @@ import os
 from pathlib import Path
 from typing import Any
 
-import faiss
 import numpy as np
 import pandas as pd
-from sentence_transformers import SentenceTransformer
 import litellm
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX_DIR = ROOT / "data" / "vector_index"
 INDEX_DIR.mkdir(parents=True, exist_ok=True)
 
-EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 LLM_MODEL = "gemini/gemini-3.5-flash-lite"  # free-tier
+
+# Try to import vector search dependencies
+try:
+    import faiss
+    from sentence_transformers import SentenceTransformer
+    VECTOR_AVAILABLE = True
+except ImportError:
+    VECTOR_AVAILABLE = False
+    faiss = None
+    SentenceTransformer = None
+
+EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
 
 class LiveLLMEngine:
     """Live LLM features for the deployed dashboard."""
 
     def __init__(self):
-        self.embedder = SentenceTransformer(EMBED_MODEL)
+        self.embedder = None
         self.index = None
         self.metadata = None
-        self._load_or_build_index()
+        self._vector_ready = False
+        
+        if VECTOR_AVAILABLE:
+            try:
+                self.embedder = SentenceTransformer(EMBED_MODEL)
+                self._load_or_build_index()
+                self._vector_ready = True
+            except Exception as e:
+                print(f"Vector search initialization failed: {e}")
+                self._vector_ready = False
+        else:
+            print("Vector search dependencies not available (faiss/sentence-transformers)")
 
     def _load_or_build_index(self):
         """Load existing FAISS index or build from current signals."""
@@ -82,7 +102,7 @@ class LiveLLMEngine:
 
     def search(self, query: str, k: int = 10) -> list[dict]:
         """Search for relevant signals using semantic similarity."""
-        if self.index is None or self.index.ntotal == 0:
+        if not self._vector_ready or self.index is None or self.index.ntotal == 0:
             return []
 
         query_emb = self.embedder.encode([query], normalize_embeddings=True)
@@ -98,8 +118,8 @@ class LiveLLMEngine:
 
     def rag_answer(self, question: str, k: int = 8) -> dict:
         """Answer a question using RAG over grounded signals."""
-        if self.index is None or self.index.ntotal == 0:
-            return {"answer": "No evidence indexed yet. Run extraction first.", "citations": []}
+        if not self._vector_ready or self.index is None or self.index.ntotal == 0:
+            return {"answer": "Vector search not available. Run extraction first or check dependencies.", "citations": []}
 
         hits = self.search(question, k=k)
         if not hits:

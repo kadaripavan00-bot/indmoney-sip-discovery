@@ -484,6 +484,41 @@ def rag_tab(signals: pd.DataFrame) -> None:
         st.warning("No signals loaded. Run extraction first.")
         return
 
+    # Check if vector search is available
+    engine = get_engine()
+    if not engine._vector_ready:
+        st.warning("⚠️ Vector search not available (dependencies not installed). The app will fall back to keyword search over all signals.")
+        # Fallback: simple keyword search
+        question = st.text_input(
+            "Your question",
+            placeholder="e.g., What are the main reasons people stop SIPs in month 3?",
+        )
+        if st.button("Search", type="primary", disabled=not question.strip()):
+            needle = question.lower()
+            hits = signals[
+                signals.apply(
+                    lambda row: needle in " ".join([
+                        str(row.get("quote", "")),
+                        str(row.get("source", "")),
+                        " ".join(row.get("triggers", [])),
+                        " ".join(row.get("behaviors", [])),
+                        " ".join(row.get("themes", [])),
+                    ]).lower(),
+                    axis=1,
+                )
+            ].head(10)
+            
+            if hits.empty:
+                st.info("No matching signals found.")
+                return
+            
+            st.markdown("#### Keyword matches (vector search unavailable)")
+            for _, hit in hits.iterrows():
+                with st.expander(f"Signal {hit['signal_id']} · {hit['source']} · {hit.get('outcome', 'unknown')}"):
+                    st.markdown(f"> {hit['quote']}")
+                    st.caption(f"Themes: {', '.join(hit.get('themes', []))} | Stage: {hit.get('journey_stage', 'unknown')} | [Source]({hit.get('url', '#')})")
+        return
+
     question = st.text_input(
         "Your question",
         placeholder="e.g., What are the main reasons people stop SIPs in month 3? How do cash-flow shocks differ from market panic?",
@@ -491,7 +526,6 @@ def rag_tab(signals: pd.DataFrame) -> None:
 
     if st.button("Ask", type="primary", disabled=not question.strip()):
         with st.spinner("Searching evidence and generating answer..."):
-            engine = get_engine()
             result = engine.rag_answer(question, k=8)
 
         st.markdown("#### Answer")
