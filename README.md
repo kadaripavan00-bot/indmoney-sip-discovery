@@ -220,3 +220,5 @@ deliverables/           PDFs, PPTX, charts
 - The corpus spans 2014–2026; platform and market conditions change.
 - Kappa is inter-model agreement, not human ground truth. The 30-item review
   queue is a seed for human adjudication, not a completed gold standard.
+#   r e d e p l o y   t r i g g e r   1 0 / 2 5 / 2 0 2 6   1 8 : 0 5 : 0 2  
+ 
