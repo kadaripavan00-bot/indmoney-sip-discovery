@@ -1,0 +1,37 @@
+# Streamlit Community Cloud deployment config
+# This file tells Streamlit Cloud how to deploy the app
+
+# Python version (optional, defaults to latest supported)
+python = "3.11"
+
+# Dependencies
+packages = [
+    "streamlit",
+    "pandas",
+    "plotly",
+    "sqlalchemy",
+    "pydantic",
+    "python-dotenv",
+    "pyyaml",
+    "requests",
+    "httpx",
+    "tenacity",
+    "tqdm",
+    "numpy",
+    "litellm",
+    "sentence-transformers",
+    "faiss-cpu",
+    "scikit-learn",
+]
+
+# Commands to run before starting the app
+[build]
+# No additional build steps needed
+
+[server]
+headless = true
+enableCORS = false
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats = false

@@ -2,6 +2,9 @@
 
 Run:
     streamlit run dashboard/app.py
+
+Deploy:
+    Push to GitHub → connect to Streamlit Community Cloud → auto-deploys on push
 """
 
 from __future__ import annotations
@@ -30,16 +33,19 @@ from src.analysis import (  # noqa: E402
     theme_summary,
 )
 from src.db import get_session  # noqa: E402
+from src.live_llm import get_engine  # noqa: E402
 from src.models import Run  # noqa: E402
 
 st.set_page_config(
     page_title="INDmoney SIP Discovery Engine",
     page_icon="🔎",
     layout="wide",
+    initial_sidebar_state="expanded",
 )
 
 ACCENT = "#1F6F5C"
 MUTED = "#5B6770"
+PROTECTIVE = "#C9A227"
 
 
 def load_validation() -> tuple[dict, dict]:
@@ -152,7 +158,7 @@ def overview_tab(signals: pd.DataFrame, documents: pd.DataFrame, summary: pd.Dat
         color="kind",
         color_discrete_map={
             "problem": ACCENT,
-            "protective": "#C9A227",
+            "protective": PROTECTIVE,
             "other": "#9AA7A0",
         },
         labels={
@@ -470,20 +476,157 @@ def method_tab(signals: pd.DataFrame, documents: pd.DataFrame) -> None:
     )
 
 
+def rag_tab(signals: pd.DataFrame) -> None:
+    st.markdown("### 🤖 Ask the Evidence (RAG)")
+    st.caption("Ask any question about the grounded evidence. The LLM retrieves relevant signals and answers with citations.")
+
+    if signals.empty:
+        st.warning("No signals loaded. Run extraction first.")
+        return
+
+    question = st.text_input(
+        "Your question",
+        placeholder="e.g., What are the main reasons people stop SIPs in month 3? How do cash-flow shocks differ from market panic?",
+    )
+
+    if st.button("Ask", type="primary", disabled=not question.strip()):
+        with st.spinner("Searching evidence and generating answer..."):
+            engine = get_engine()
+            result = engine.rag_answer(question, k=8)
+
+        st.markdown("#### Answer")
+        st.markdown(result["answer"])
+
+        if result["citations"]:
+            st.markdown("#### Citations")
+            for i, cite in enumerate(result["citations"], 1):
+                with st.expander(f"Signal {cite['signal_id']} · {cite['source']} · {cite.get('outcome', 'unknown')} (sim={cite['similarity']:.2f})"):
+                    st.markdown(f"> {cite['quote']}")
+                    st.caption(f"Themes: {', '.join(cite.get('themes', []))} | Stage: {cite.get('journey_stage', 'unknown')} | [Source]({cite.get('url', '#')})")
+
+
+def live_extract_tab() -> None:
+    st.markdown("### ⚡ Live Extraction")
+    st.caption("Paste any review, comment, or forum post. The engine extracts grounded signals in real-time with quote verification.")
+
+    text = st.text_area(
+        "Input text",
+        height=200,
+        placeholder="Paste an App Store review, Reddit comment, YouTube comment, or forum post about SIPs/mutual funds...",
+    )
+
+    if st.button("Extract Signals", type="primary", disabled=not text.strip()):
+        with st.spinner("Running live extraction..."):
+            engine = get_engine()
+            result = engine.live_extract(text)
+
+        if result.get("error"):
+            st.error(result["error"])
+            return
+
+        signals = result.get("signals", [])
+        st.metric("Signals extracted", len(signals))
+
+        if not signals:
+            st.info("No grounded signals found in this text.")
+            return
+
+        for i, sig in enumerate(signals):
+            with st.expander(f"Signal {i+1}: {sig.get('primary_theme', 'unknown')} · {sig.get('outcome', 'unknown')}", expanded=True):
+                cols = st.columns(2)
+                with cols[0]:
+                    st.markdown(f"**Triggers:** {', '.join(sig.get('triggers', [])) or '—'}")
+                    st.markdown(f"**Behaviors:** {', '.join(sig.get('behaviors', [])) or '—'}")
+                    st.markdown(f"**Emotions:** {', '.join(sig.get('emotions', [])) or '—'}")
+                with cols[1]:
+                    st.markdown(f"**Expectations:** {', '.join(sig.get('expectations', [])) or '—'}")
+                    st.markdown(f"**Themes:** {', '.join(sig.get('themes', [])) or '—'}")
+                    st.markdown(f"**Outcome:** {sig.get('outcome', 'unknown')}")
+                if sig.get("quote"):
+                    verified = "✅ Verified" if sig.get("quote_verified") else "⚠️ Not verified"
+                    st.markdown(f"**Quote:** {verified}")
+                    st.markdown(f"> {sig['quote']}")
+                st.caption(f"Confidence: {sig.get('confidence', 'unknown')}")
+
+
+def theme_narrative_tab(signals: pd.DataFrame, summary: pd.DataFrame) -> None:
+    st.markdown("### 📖 Theme Narrative Summaries")
+    st.caption("Generate a structured narrative summary for any theme using the LLM, grounded in the theme's evidence.")
+
+    if summary.empty or signals.empty:
+        st.info("No themes yet.")
+        return
+
+    theme_names = summary["name"].tolist()
+    selected = st.selectbox("Choose a theme", theme_names, key="narrative_theme")
+
+    if st.button("Generate Narrative", type="primary"):
+        row = summary[summary["name"] == selected].iloc[0]
+        with st.spinner("Generating narrative summary..."):
+            engine = get_engine()
+            narrative = engine.theme_narrative(row["slug"], signals)
+        st.markdown(narrative)
+
+
+def segment_comparison_tab(signals: pd.DataFrame) -> None:
+    st.markdown("### 🔍 Segment Comparison")
+    st.caption("Compare patterns across user segments (income stability, age, goal type, influence, etc.) using LLM analysis.")
+
+    if signals.empty:
+        st.info("No signals yet.")
+        return
+
+    segment_fields = ["income_stability", "age_band", "goal_type", "influence", "source_of_money", "ticket_size"]
+    selected_field = st.selectbox("Segment field", segment_fields)
+
+    # Get available values for this field
+    values = set()
+    for cues in signals["segment_cues"].dropna():
+        if isinstance(cues, dict) and cues.get(selected_field):
+            values.add(cues[selected_field])
+    available = sorted([v for v in values if v and v != "unknown"])
+
+    if not available:
+        st.warning(f"No segment data available for {selected_field}.")
+        return
+
+    selected_values = st.multiselect("Select values to compare", available, default=available[:3] if len(available) >= 3 else available)
+
+    if st.button("Compare Segments", type="primary", disabled=len(selected_values) < 2):
+        with st.spinner("Analyzing segment differences..."):
+            engine = get_engine()
+            comparison = engine.segment_comparison(selected_field, selected_values, signals)
+        st.markdown(comparison)
+
+
 def main() -> None:
     st.title("INDmoney SIP Discovery Engine")
     st.caption(
         "Why first-time Indian mutual-fund investors lapse by month 12 — and where "
         "the retention opportunity is. Public data only; no fund recommendations."
     )
+
     signals, documents, summary = load_data()
     if signals.empty:
         st.warning("No current signals found. Run the extraction pipeline first.")
         return
+
     filtered = sidebar_filters(signals)
-    tab_overview, tab_themes, tab_signals, tab_segments, tab_method = st.tabs(
-        ["Overview", "Themes", "Signals", "Segments & stages", "Method & guardrails"]
+
+    tab_overview, tab_themes, tab_signals, tab_segments, tab_method, tab_rag, tab_live, tab_narrative, tab_segcomp = st.tabs(
+        [
+            "Overview",
+            "Themes",
+            "Signals",
+            "Segments & stages",
+            "Method & guardrails",
+            "🤖 Ask Evidence (RAG)",
+            "⚡ Live Extract",
+            "📖 Theme Narratives",
+            "🔍 Segment Compare",
+        ]
     )
+
     with tab_overview:
         overview_tab(filtered, documents, summary)
     with tab_themes:
@@ -494,6 +637,14 @@ def main() -> None:
         segments_tab(filtered)
     with tab_method:
         method_tab(filtered, documents)
+    with tab_rag:
+        rag_tab(filtered)
+    with tab_live:
+        live_extract_tab()
+    with tab_narrative:
+        theme_narrative_tab(filtered, summary)
+    with tab_segcomp:
+        segment_comparison_tab(filtered)
 
 
 if __name__ == "__main__":

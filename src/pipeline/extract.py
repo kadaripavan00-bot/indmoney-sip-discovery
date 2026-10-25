@@ -438,6 +438,99 @@ def run_extraction(
     return stats
 
 
+class MockDocument:
+    """Mock document for live extraction from arbitrary text."""
+    def __init__(self, text: str, doc_id: int = -1):
+        self.id = doc_id
+        self.raw_text = text
+        self.normalized_text = text
+        self.source = None
+        self.published_at = None
+        self.language = "en"
+        self.meta = {}
+
+
+def extract_signals_from_text(text: str, doc_id: int = -1, source: str = "live_input") -> list[dict]:
+    """Extract signals from arbitrary text using the same pipeline as batch extraction."""
+    from ..config import settings
+    from .llm_client import LLMClient
+    from ..schemas import BatchDocumentExtraction, SignalExtraction
+    from ..taxonomy import normalize_signal_payload, validate_signal_payload
+    from ..grounding import ground_signal_payload, is_meaningful
+
+    cfg = settings()
+    codebook = cfg.get("codebook", {})
+    client = LLMClient(cfg.get("models", {}))
+
+    mock_doc = MockDocument(text, doc_id)
+    messages = build_messages([mock_doc], codebook)
+
+    result = client.complete_json(
+        messages,
+        role="bulk",
+        max_tokens=int(EXTRACTION_CONFIG.get("max_tokens", 2400)),
+    )
+    parsed = BatchDocumentExtraction.model_validate(result.data)
+
+    signals = []
+    for item in parsed.results:
+        if not item.relevant:
+            continue
+        for signal in item.signals[:MAX_SIGNALS_PER_DOC]:
+            payload = signal.model_dump()
+            payload, _ = normalize_signal_payload(payload)
+
+            quote = (signal.quote or "").strip()
+            if len(quote) > MAX_QUOTE_CHARS:
+                continue
+
+            match = verify_quote(mock_doc, quote)
+            if match is None or match.get("soft"):
+                continue
+
+            segment_quote = (signal.segment_quote or "").strip() or None
+            segment_match = None
+            if segment_quote:
+                if len(segment_quote) > MAX_QUOTE_CHARS:
+                    segment_quote = None
+                else:
+                    segment_match = verify_quote(mock_doc, segment_quote)
+                    if segment_match is None or segment_match.get("soft"):
+                        segment_quote = None
+                        segment_match = None
+
+            grounded, _ = ground_signal_payload(payload, quote, segment_quote=segment_quote)
+            validation_errors = validate_signal_payload(grounded)
+            if validation_errors:
+                continue
+
+            if not is_meaningful(grounded):
+                continue
+
+            signals.append({
+                "journey_stage": grounded["journey_stage"],
+                "triggers": grounded["triggers"],
+                "behaviors": grounded["behaviors"],
+                "emotions": grounded["emotions"],
+                "expectations": grounded["expectations"],
+                "help_seeking": grounded["help_seeking"],
+                "outcome": grounded["outcome"],
+                "segment_cues": grounded.get("segment_cues", {}),
+                "quote": quote,
+                "confidence": grounded["confidence"],
+                "raw": {
+                    **grounded,
+                    "provider": result.provider,
+                    "model": result.model,
+                    "quote_match": match["field"],
+                    "segment_quote": segment_quote,
+                    "segment_quote_match": (segment_match or {}).get("field"),
+                },
+            })
+
+    return signals
+
+
 def main() -> None:
     import argparse
     import sys
